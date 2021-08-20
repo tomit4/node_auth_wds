@@ -19,7 +19,7 @@ app.get('/users', (req, res) => {
 // This logic would be utilized as a CREATE NEW USER page
 app.post('/users', async (req, res) => {
     try {
-        // we could pass the salt above as our second parameter but we can also just pass 10, and the bcrypt.hash() function will do it for us
+        // we could pass the salt as our second parameter but we can also just pass 10, and the bcrypt.hash() function will do it for us
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
         const user = {
             name: req.body.name,
